@@ -1,0 +1,102 @@
+===========================
+
+Connection
+NADIA
+
+============================
+
+Database Afterworld
+
+- Role = admin, member, guest
+- User = id, name, role id, email, password, phone number, booking id,
+- Booking = id, place, payment id, start date, end date
+- Payment = id, name
+- Place = id, name, price, location, description, rating, category id
+- Category = id, name
+
+===========================
+
+Pembagian Tugas
+
+Nadia
+-footer
+-database
+-connect database
+-cookies
+
+
+
+
+Rizky
+-header
+-design
+PLACES pg 10(Paging, searching)
+PLACE DETAIL
+
+============================
+Controller
+
+- Get All Place
+- Get Place
+- Post Place
+- Update Place
+- Delete Place
+
+- Get All User
+- Get User
+- Post User
+- Update User
+- Delete User
+
+- Get All Payment
+- Get Payment
+- Post Payment
+- Update Payment
+- Delete Payment
+
+- Get All Booking
+- Get Booking
+- Post Booking
+
+- Get All Category
+- Get Category
+- Post Category
+- Update Category
+- Delete Category
+
+- LOGOUT
+- LOGIN
+- REGISTER
+- Check User Login
+
+
+==============================
+
+Model
+
+- Role
+- User
+- Booking 
+- Payment 
+- Place 
+- Category 
+
+
+==============================
+
+- Home
+- Login
+- Register
+- Places
+- Place Detail
+- My Booking
+- Profile
+
+- Manage User
+- Manage Place
+- Manage Payment Type
+- Manage Category
+- Edit User
+- Edit Place
+- Edit Payment Type
+- Edit Category
