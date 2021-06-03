@@ -7,12 +7,12 @@ NADIA
 
 Database Afterworld
 
-- Role = admin, member, guest
-- User = id, name, role id, email, password, phone number, booking id,
-- Booking = id, place, payment id, start date, end date
-- Payment = id, name
-- Place = id, name, price, location, description, rating, category id
-- Category = id, name
+v Role = admin, member, guest
+v User = id, name, role id, email, password, phone number, booking id,
+v Booking = id, place, payment id, start date, end date
+v Payment = id, name
+v Place = id, name, price, location, description, rating, category id
+v Category = id, name
 
 ===========================
 
