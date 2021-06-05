@@ -73,7 +73,7 @@ public class Place{
     public Place getPlace(Integer id){
         Place place = new Place();
         try {
-            String query = "SELECT DISTINCT * FROM places WHERE id = '"+id+"'";
+            String query = "SELECT DISTINCT * FROM place WHERE id = '"+id+"'";
             ResultSet resultSet = connect.executeQuery(query);
             while(resultSet.next()){
                 place = new Place(resultSet);

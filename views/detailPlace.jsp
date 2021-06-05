@@ -18,11 +18,8 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-       
-    }
-    .flex-center {
-        justify-content: center;
-        align-items: center;
+        /* justify-content: center; */
+        /* align-items: center; */
     }
     .flex-1{
         margin-top: 30px;
@@ -41,16 +38,14 @@
 <body>
     <jsp:include page="../components/navbar.jsp" />
     <div class="container">
-        <div class="d-flex flex-center">
-            <%@include file="../models/Place.jsp"%>
-            <div>
-            </div>
-            <%
-                Vector<Place> allPlaces = new Place().getAllPlaces();
-                for(Place place : allPlaces){
-                
-            %>
-                <div class="flex-1 card">
+        <%@include file="../models/Place.jsp"%>
+        <%
+            String detailId = request.getParameter("placeId");
+
+            Place place = new Place().getPlace(Integer.parseInt(detailId));
+        %>
+        <div class="d-flex">
+                <div class="card" style="flex-grow: 1">
                     <h3>
                         <%= place.getName() %>
                     </h3>
@@ -66,12 +61,15 @@
                     <div>
                         description: <%= place.getDescription() %>
                     </div>
-                    <a href="./detailPlace.jsp?placeId=<%= place.getPlacesId() %>">View Detail</a>
                 </div>
-                
-        <%
-            }
-            %>
+                <div class="card" style="flex-grow: 1;">
+                    <h2> Rp. <%= place.getPrice() %> / night </h2>
+                    <form action="#" method="POST" style="display: flex; flex-direction: column;">
+                        <input type="date" name="check-in" id="check-in" style="margin-top: 1em"/>
+                        <input type="date" name="check-out" id="check-out" style="margin-top: 1em"/>
+                        <input type="submit" name="Book" value="Book" style="margin-top: 1em"/>
+                    </form>
+                </div>
         </div>
     </div>
     <jsp:include page="../components/footer.jsp" />
