@@ -84,6 +84,20 @@ public class Place{
         return place;
     }
 
+    public String getCategoryName(Integer id){
+        String name = "";
+        try {
+            String query = "SELECT DISTINCT * FROM category WHERE id = '"+id+"'";
+            ResultSet resultSet = connect.executeQuery(query);
+            while(resultSet.next()){
+                name = resultSet.getString("name");
+            }
+        }catch(Exception err){
+            err.printStackTrace();
+        }
+        return name;
+    }
+
     // get all places berdasarkan category_id
     public Vector<Place> getPlaceByCategory(Integer id){
         Vector<Place> placesVector = new Vector<Place>();
@@ -129,5 +143,19 @@ public class Place{
             err.printStackTrace();
         }
     } 
+
+    public Vector<String> getAllCategoryNames(){
+        Vector<String> categoryNames = new Vector<String>();
+         try {
+            String query = "SELECT * FROM category";
+            ResultSet resultSet = connect.executeQuery(query);
+            while(resultSet.next()){
+                categoryNames.add(resultSet.getString("name"));
+            }
+        }catch(Exception err){
+            err.printStackTrace();
+        }
+        return categoryNames;
+    }
 }
 %>

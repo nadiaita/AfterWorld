@@ -13,7 +13,7 @@
     }
     .container {
         padding: 20px 100px;
-        min-height: 55vh;
+        min-height: 65vh;
     }
     .d-flex{
         display: flex;

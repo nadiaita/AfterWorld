@@ -43,19 +43,16 @@
     <div class="container">
         <div class="d-flex flex-center">
             <%@include file="../models/Place.jsp"%>
-            <div>
-            </div>
             <%
                 Vector<Place> allPlaces = new Place().getAllPlaces();
                 for(Place place : allPlaces){
-                
             %>
                 <div class="flex-1 card">
                     <h3>
                         <%= place.getName() %>
                     </h3>
                     <h4>
-                        <%= place.getCategoryId() %>
+                        <%= place.getCategoryName(place.getCategoryId()) %>
                     </h4>
                     <p>
                         Harga: Rp. <%= place.getPrice() %> / night

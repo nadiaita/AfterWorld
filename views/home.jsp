@@ -18,8 +18,11 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        /* justify-content: center; */
-        /* align-items: center; */
+       
+    }
+    .flex-center {
+        justify-content: center;
+        align-items: center;
     }
     .flex-1{
         margin-top: 30px;
@@ -37,15 +40,33 @@
 </style>
 <body>
     <jsp:include page="../components/navbar.jsp" />
+     <section id="banner" style="text-align: center; padding: 3em 0;">
+        <div style="padding: 20px; background-color: white; width: 40%; margin: 0 auto;">
+            <h1 style="font-size: 50px;">After World</h1>
+            <p style="font-size: 24px;">Life begins at the end of your comfort zone</p>
+        </div>
+    </section>
     <div class="container">
         <%@include file="../models/Place.jsp"%>
-        <%
-            String detailId = request.getParameter("placeId");
-
-            Place place = new Place().getPlace(Integer.parseInt(detailId));
-        %>
-        <div class="d-flex">
-                <div class="card" style="flex-grow: 1">
+        <section id="categories"  style="display: flex; flex-direction: row; ">  
+            <%
+                Vector<String> categories = new Place().getAllCategoryNames();
+                for(String category : categories){
+            %>
+                <div style="border: 1px solid gray; border-radius: 10px; margin-right: 10px; padding: 8px;">
+                    <%= category %>
+                </div>
+            <%
+                }
+            %>
+        </section>
+        <h1 style="font-size: 24px; margin-top: 20px; margin-bottom: 20px;">Explore new Places with Us</h1>
+        <div class="d-flex flex-center">
+            <%
+                Vector<Place> allPlaces = new Place().getAllPlaces();
+                for(Place place : allPlaces){
+            %>
+                <div class="flex-1 card">
                     <h3>
                         <%= place.getName() %>
                     </h3>
@@ -61,18 +82,12 @@
                     <div>
                         description: <%= place.getDescription() %>
                     </div>
+                    <a href="./detailPlace.jsp?placeId=<%= place.getPlacesId() %>">View Detail</a>
                 </div>
-                <div class="card" style="flex-grow: 1;">
-                    <h2> Rp. <%= place.getPrice() %> / night </h2>
-                    <form action="../controllers/booking/createBooking.jsp" method="POST" style="display: flex; flex-direction: column;">
-                        <input type="hidden" name="user_id" value="1" />
-                        <input type="hidden" name="place_id" value="<%= detailId %>" />
-                        <input type="hidden" name="payment_id" value="1" />
-                        <input type="date" name="start_date" id="start_date" style="margin-top: 1em"/>
-                        <input type="date" name="end_date" id="end_date" style="margin-top: 1em"/>
-                        <input type="submit" name="Book" value="Book" style="margin-top: 1em"/>
-                    </form>
-                </div>
+                
+        <%
+            }
+            %>
         </div>
     </div>
     <jsp:include page="../components/footer.jsp" />
