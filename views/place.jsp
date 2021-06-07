@@ -60,9 +60,6 @@
                     <div>
                         Location: <%= place.getLocation() %>
                     </div>
-                    <div>
-                        description: <%= place.getDescription() %>
-                    </div>
                     <a href="./detailPlace.jsp?placeId=<%= place.getPlacesId() %>">View Detail</a>
                 </div>
                 

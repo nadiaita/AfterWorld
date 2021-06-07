@@ -59,7 +59,7 @@
                         Location: <%= place.getLocation() %>
                     </div>
                     <div>
-                        description: <%= place.getDescription() %>
+                        Description: <%= place.getDescription() %>
                     </div>
                 </div>
                 <div class="card" style="flex-grow: 1;">
