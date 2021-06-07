@@ -73,7 +73,7 @@ public class Place{
     public Place getPlace(Integer id){
         Place place = new Place();
         try {
-            String query = "SELECT DISTINCT * FROM places WHERE id = '"+id+"'";
+            String query = "SELECT DISTINCT * FROM place WHERE id = '"+id+"'";
             ResultSet resultSet = connect.executeQuery(query);
             while(resultSet.next()){
                 place = new Place(resultSet);
@@ -82,6 +82,20 @@ public class Place{
             err.printStackTrace();
         }
         return place;
+    }
+
+    public String getCategoryName(Integer id){
+        String name = "";
+        try {
+            String query = "SELECT DISTINCT * FROM category WHERE id = '"+id+"'";
+            ResultSet resultSet = connect.executeQuery(query);
+            while(resultSet.next()){
+                name = resultSet.getString("name");
+            }
+        }catch(Exception err){
+            err.printStackTrace();
+        }
+        return name;
     }
 
     // get all places berdasarkan category_id
@@ -129,5 +143,19 @@ public class Place{
             err.printStackTrace();
         }
     } 
+
+    public Vector<String> getAllCategoryNames(){
+        Vector<String> categoryNames = new Vector<String>();
+         try {
+            String query = "SELECT * FROM category";
+            ResultSet resultSet = connect.executeQuery(query);
+            while(resultSet.next()){
+                categoryNames.add(resultSet.getString("name"));
+            }
+        }catch(Exception err){
+            err.printStackTrace();
+        }
+        return categoryNames;
+    }
 }
 %>

@@ -1,4 +1,4 @@
-<!-- inser a new product -->
+<!-- inser a new place -->
 <%@include file="../../models/Place.jsp" %>
 <%@page import="java.sql.*, java.util.*" %>
 
@@ -23,7 +23,7 @@
         place.setRating(prat);
         place.insertPlace();
         response.sendRedirect("/");
-    } catch(Exception err=> {
+    } catch(Exception err)  {
         err.printStackTrace();
     })
 %>
