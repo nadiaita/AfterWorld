@@ -4,11 +4,11 @@
 	<title>Register Page</title>
 </head>
 <body>
- 
+ 	<jsp:include page="../components/navbar.jsp" />
 	<div class="login_box">
 		<p class="header_login">After World</p>
- 
-		<form action="./controller/InsertNewUser.jsp" method="POST">
+
+		<form action="../controllers/user/createUser.jsp" method="POST">
 		<table>
 			<tr>
 				<td>
@@ -64,6 +64,7 @@
  
 		
 	</div>
+	<jsp:include page="../components/footer.jsp" />
  
  
 </body>

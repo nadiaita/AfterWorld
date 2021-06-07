@@ -6,7 +6,7 @@ public class User{
     private Integer id;
     private Integer role_id;
     private String name;
-    private Integer email;
+    private String email;
     private String password;
     private String phone_number; 
 
@@ -32,7 +32,7 @@ public class User{
     public void setUserId(Integer id) {this.id = id;}
     public void setRoleId(Integer role_id) {this.role_id = role_id;}
     public void setName(String name) {this.name = name;}
-    public void setEmail(Integer email) {this.email = email;}
+    public void setEmail(String email) {this.email = email;}
     public void setPassword(String password) {this.password = password;}
     public void setPhoneNumber(String phone_number) {this.phone_number = phone_number;}
 
