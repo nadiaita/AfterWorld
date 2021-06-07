@@ -4,24 +4,23 @@
 
 <%
     User user = new User();
-    Integer urole = request.getParameter("role_id");
-    String uname = request.getParameter("name");
-    Integer uemail = request.getParameter("email");
+    Integer urole = Integer.parseInt(request.getParameter("role_id"));
+    String uname = request.getParameter("user_name");
+    String uemail = request.getParameter("email");
     String upassword = request.getParameter("password");
     String uphone = request.getParameter("phone_number");
 
-    //Validation -- NANTI AJA MAGER HEHE 
-
     //Set value ke user dan insert ke DB
     try{
-        user.setName(pname.toLowerCase());
-        user.setRoleId(Integer.parseInt(urole));
-        user.setEmail(Integer.parseInt(uname));
+        user.setName(uname.toLowerCase());
+        user.setRoleId(urole);
+        user.setEmail(uemail);
         user.setPassword(upassword);
-        user.setPhone(uphone);
-        user.insertPlace();
+        user.setPhoneNumber(uphone);
+        System.out.println(user);
+        user.insertUser();
         response.sendRedirect("/");
     } catch(Exception err)  {
         err.printStackTrace();
-    })
+    }
 %>

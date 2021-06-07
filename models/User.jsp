@@ -20,7 +20,7 @@ public class User{
             this.id = resultSet.getInt("id");
             this.role_id = resultSet.getInt("role_id");
             this.name = resultSet.getString("name");
-            this.email = resultSet.getInt("email");
+            this.email = resultSet.getString("email");
             this.password = resultSet.getString("password");
             this.phone_number = resultSet.getString("phone_number");
         } catch (Exception e) {
@@ -56,13 +56,13 @@ public class User{
             String query = "SELECT * FROM user";
             ResultSet resultSet = connect.executeQuery(query);
             while(resultSet.next()){
-                placesVector.add(new User(resultSet));
+                usersVector.add(new User(resultSet));
             }
         }catch(Exception err){
             err.printStackTrace();
         }
-        System.out.println(placesVector);
-        return placesVector;
+        System.out.println(usersVector);
+        return usersVector;
     }
 
    // get single place berdasarkan id
@@ -72,7 +72,7 @@ public class User{
             String query = "SELECT DISTINCT * FROM user WHERE id = '"+id+"'";
             ResultSet resultSet = connect.executeQuery(query);
             while(resultSet.next()){
-                place = new User(resultSet);
+                user = new User(resultSet);
             }
         }catch(Exception err){
             err.printStackTrace();
@@ -97,7 +97,7 @@ public class User{
     // insert user baru
     public void insertUser(){
         try {
-            String query = String.format("INSERT INTO places (role_id, name, email, password, phone_number) VALUES ('"+role_id+"', '"+name+"', '"+email+"', '"+password+"', '"+phone_number+"')");
+            String query = String.format("INSERT INTO user (role_id, name, email, password, phone_number) VALUES ('"+role_id+"', '"+name+"', '"+email+"', '"+password+"', '"+phone_number+"')");
             connect.executeUpdate(query);
         }catch(Exception err){
             err.printStackTrace();
@@ -138,5 +138,6 @@ public class User{
         }
         return roleNames;
     }
+    
 }
 %>

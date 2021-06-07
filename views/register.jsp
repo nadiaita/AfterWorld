@@ -9,13 +9,14 @@
 		<p class="header_login">After World</p>
 
 		<form action="../controllers/user/createUser.jsp" method="POST">
+		<input type="hidden" name="role_id" id="role_id" value="2"/>
 		<table>
 			<tr>
 				<td>
 					Username
 				</td>
 				<td>
-					<input type="text" name="username" placeholder="Username" id="nameUsername">
+					<input type="text" name="user_name" placeholder="Username" id="user_name">
 				</td>
 			</tr>
 			<tr>
@@ -23,7 +24,7 @@
 					Email
 				</td>
 				<td>
-					<input type="text" name="email" placeholder="Email" id="Emailmassage">
+					<input type="text" name="email" placeholder="Email" id="email">
 				</td>
 			</tr>
 			<tr>
@@ -31,7 +32,7 @@
 					Password
 				</td>
 				<td>
-					<input type="password" name="password" placeholder="Password" id="Passwordmassage">
+					<input type="password" name="password" placeholder="Password" id="password">
 				</td>
 			</tr>
 			<tr>
@@ -39,7 +40,7 @@
 					Phone Number
 				</td>
 				<td>
-					<input type="tel" name="phonenumber" placeholder="Phone Number" id="PhoneNumbermassage" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+					<input type="tel" name="phone_number" placeholder="Phone Number" id="phone_number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
 				</td>
 			</tr>
 
@@ -57,7 +58,7 @@
 			}
 		%>
 
-			<button type="submit" class="btn btn-action tombol_login">Register</button>
+		<button type="submit" class="btn btn-action tombol_login">Register</button>
 		
         <a href="./login.jsp">Already have an account? Login Now!</a>
         </form>
