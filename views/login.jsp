@@ -6,9 +6,9 @@
 <body>
  
 	<div class="login_box">
-		<p class="header_login">Aqua Pets</p>
+		<p class="header_login">Afterworld</p>
  
-		<form action="./controller/CheckUserLogin.jsp" method="POST">
+		<form action="./controller/checkUserLogin.jsp" method="POST">
 			<label>Username</label>
 			<input type="text" name="username" class="form_login" placeholder="Username">
  
