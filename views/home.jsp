@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,4 +93,3 @@
     <jsp:include page="../components/footer.jsp" />
 </body>
 </html>
->>>>>>> e168d16be271ff81e825348633456098b0c42c39
