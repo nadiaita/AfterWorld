@@ -8,5 +8,5 @@
     } catch (Exception e) {
         e.printStackTrace();
     }
-    response.sendRedirect("/");
+    response.sendRedirect("/manageUser.jsp");
 %>

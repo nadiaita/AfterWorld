@@ -65,6 +65,7 @@ public class Place{
         }catch(Exception err){
             err.printStackTrace();
         }
+        //System.out.println('Places');
         System.out.println(placesVector);
         return placesVector;
     }
