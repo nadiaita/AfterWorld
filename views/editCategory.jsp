@@ -38,7 +38,7 @@ tr:nth-child(even) {
             %>
         <div class="card" style="padding: 2em; margin-top: 2em;">
             <form action="../controllers/category.createCategory.jsp" method="POST" id="createCategory" style="flex-direction: column;">
-                <input type="hidden" value="<%= category.getCategoryId() %>" name="category_id" />
+                <input type="hidden" value="<%= categYy.getCategoryId() %>" name="category_id" />
                 <label for="name" style="display: block;">Name</label>
                 <input type="text" name="name" id="name" style="display: block; width: 100%; margin-top" value="<%= category.getName() %>"/>
                 <input type="submit" value="Save" style="display: block; width: 100%;"/>
