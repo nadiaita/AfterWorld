@@ -84,25 +84,26 @@
 </style>
 <body>
     <div class="navbar d-flex">
-            <a href="#">Afterworld</a>
+            <a href="../views/home.jsp">Afterworld</a>
             <a href="#">Date</a>
-            <a href="#">Places</a>
+            <a href="../views/place.jsp">Places</a>
             <div class="dropdown">
                 <button class="dropbtn">Manage &#9663;</button>
                 <div class="dropdown-content">
-                    <a href="#">Users</a>
-                    <a href="#">Places</a>
-                    <a href="#">Payment Type</a>
-                    <a href="#">Categories</a>
+                    <a href="../views/manageUser.jsp">Users</a>
+                    <a href="../views/managePlace.jsp">Places</a>
+                    <a href="../views/managePayment.jsp">Payment Type</a>
+                    <a href="../views/manageCategory.jsp">Categories</a>
                 </div>
             </div>
-            <a href="#">Login</a>
+            <a href="../views/register.jsp">Register</a>
+            <a href="../views/login.jsp">Login</a>
             <div class="dropdown">
                 <button class="dropbtn">Nadibo &#9663;</button>
                 <div class="dropdown-content" style="right: 0;">
                     <a href="#">Logout</a>
-                    <a href="#">My Booking</a>
-                    <a href="#">Profile</a>
+                    <a href="../views/myBooking.jsp">My Booking</a>
+                    <a href="">Profile</a>
                 </div>
             </div>
     </div>
