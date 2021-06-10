@@ -71,6 +71,24 @@ tr:nth-child(even) {
             }
             %>
         </table>
+        <div class="card" style="padding: 2em; margin-top: 2em;">
+            <h2 style="text-align:center;">Insert User</h2>
+            <form action="../controllers/user/createUser.jsp" method="POST" id="createUser" style="flex-direction: column;">
+                <label for="name" style="display: block;">Name</label>
+                <input type="text" name="name" id="name" style="display: block; width: 100%; margin-top"/>
+                <label for="email" style="display: block;">Email Address</label>
+                <input type="text" name="email" id="email" style="display: block; width: 100%"/>
+                <label for="phone" style="display: block;">Phone Number</label>
+                <input type="number" name="phone" id="phone" style="display: block; width: 100%"/>
+                <label for="role" style="display: block;">Role</label>
+                <%-- <c:forEach items="<%=RoleIds%>" var="role">
+                    <option value="<%= role%>"><%= user.getRoleName(role) %></option>
+                </c:forEach> --%>
+                <input type="hidden" value="1" name="role_id"/>
+                <input type="submit" value="Save" style="display: block; width: 100%;"/>
+            </form>
+        </div>
+    </div>
     </div>
     <jsp:include page="../components/footer.jsp" />
 </body>
