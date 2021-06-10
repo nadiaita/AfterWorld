@@ -4,27 +4,33 @@
 
 <%
     Place place = new Place();
-    Integer pid = request.getParameter("place_id")
-    String pname = request.getParameter("place_name");
-    Integer pcat = request.getParameter("category_id");
-    Integer pprice = request.getParameter("price");
+    Integer pid = Integer.parseInt(request.getParameter("place_id"));
+    String pname = request.getParameter("name");
+    Integer pcat = Integer.parseInt(request.getParameter("category_id"));
+    Integer pprice = Integer.parseInt(request.getParameter("price"));
     String ploc = request.getParameter("location");
     String pdesc = request.getParameter("description");
-    String prat = request.getParameter("rating");
+    Integer prat = Integer.parseInt(request.getParameter("rating"));
 
     //Validation -- NANTI AJA MAGER HEHE 
 
     //Set value ke place dan insert ke DB
     try{
+        System.out.println("Isi dati Product");
+        System.out.println(pname);
         place.setName(pname.toLowerCase());
-        place.setCategoryId(Integer.parseInt(pcat));
-        place.setPrice(Integer.parseInt(pprice));
+        place.setCategoryId(1);
+        place.setPrice(pprice);
         place.setDescription(pdesc);
         place.setLocation(ploc);
         place.setRating(prat);
+
+
         place.updatePlace(pid);
-        response.sendRedirect("/");
-    } catch(Exception err=> {
+        response.sendRedirect("../../views/managePlace.jsp");
+    } catch(Exception err) {
+        System.out.println(place);
         err.printStackTrace();
-    })
+        System.out.println(err);
+    }
 %>

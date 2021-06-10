@@ -117,7 +117,7 @@ public class Place{
     // insert place baru
     public void insertPlace(){
         try {
-            String query = String.format("INSERT INTO places (name, category_id, price, location, description, rating) VALUES ('"+name+"', '"+category_id+"', '"+price+"', '"+location+"', '"+description+"', '"+rating+"')");
+            String query = String.format("INSERT INTO place (name, category_id, price, location, description, rating) VALUES ('"+name+"', '"+category_id+"', '"+price+"', '"+location+"', '"+description+"', '"+rating+"')");
             connect.executeUpdate(query);
         }catch(Exception err){
             err.printStackTrace();
@@ -127,7 +127,7 @@ public class Place{
     //Update single place berdasarkan id
     public void updatePlace(Integer id){
          try {
-            String query = String.format("UPDATE places SET name = '"+name+"', category_id = '"+category_id+"',price = '"+price+"', location = "+location+"', description = '"+description+"', rating = '"+rating+"' WHERE id = '"+id+"'");
+            String query = "UPDATE place SET name = '"+name+"', price = '"+price+"', location = '"+location+"', description = '"+description+"', rating = '"+rating+"', category_id = '1' WHERE id ="+id;
             connect.executeUpdate(query);
         }catch(Exception err){
             err.printStackTrace();
@@ -137,7 +137,7 @@ public class Place{
     //delete single place berdasarkan id
     public void deletePlace(Integer id){
         try {
-            String query = "DELETE FROM places WHERE id = '"+id+"'";
+            String query = "DELETE FROM place WHERE id = '"+id+"'";
             connect.executeUpdate(query);
         }
         catch(Exception err){
@@ -158,5 +158,19 @@ public class Place{
         }
         return categoryNames;
     }
+    public Vector<Integer> getAllCategoryId(){
+        Vector<Integer> categoryIds = new Vector<Integer>();
+         try {
+            String query = "SELECT * FROM category";
+            ResultSet resultSet = connect.executeQuery(query);
+            while(resultSet.next()){
+                categoryIds.add(resultSet.getInt("id"));
+            }
+        }catch(Exception err){
+            err.printStackTrace();
+        }
+        return categoryIds;
+    }
+
 }
 %>

@@ -42,7 +42,7 @@
                 //out.print(rsTotalData.getInt("data"));
             }
 
-            int limit = 9;
+            int limit = 6;
             int offset = (currentPage - 1) * limit;
             totalPage = (totalData/limit) + 2;
 

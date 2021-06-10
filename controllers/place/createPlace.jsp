@@ -4,26 +4,26 @@
 
 <%
     Place place = new Place();
-    String pname = request.getParameter("place_name");
-    Integer pcat = request.getParameter("category_id");
-    Integer pprice = request.getParameter("price");
+    String pname = request.getParameter("name");
+    Integer pcat = Integer.parseInt(request.getParameter("category_id"));
+    Integer pprice = Integer.parseInt(request.getParameter("price"));
     String ploc = request.getParameter("location");
     String pdesc = request.getParameter("description");
-    String prat = request.getParameter("rating");
+    Integer prat = Integer.parseInt(request.getParameter("rating"));
 
     //Validation -- NANTI AJA MAGER HEHE 
 
     //Set value ke place dan insert ke DB
     try{
         place.setName(pname.toLowerCase());
-        place.setCategoryId(Integer.parseInt(pcat));
-        place.setPrice(Integer.parseInt(pprice));
+        place.setCategoryId(1);
+        place.setPrice(pprice);
         place.setDescription(pdesc);
         place.setLocation(ploc);
         place.setRating(prat);
         place.insertPlace();
-        response.sendRedirect("/");
+        response.sendRedirect("../../views/managePlace.jsp");
     } catch(Exception err)  {
         err.printStackTrace();
-    })
+    }
 %>

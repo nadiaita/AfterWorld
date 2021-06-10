@@ -5,9 +5,9 @@
 <%
     Place place = new Place();
     try {
-        place.deletePlace(Integer.parseInt(request.getParameter("place_id")))
+        place.deletePlace(Integer.parseInt(request.getParameter("place_id")));
     } catch (Exception e) {
         e.printStackTrace();
     }
-    response.sendRedirect("/");
+    response.sendRedirect("../../views/managePlace.jsp");
 %>
