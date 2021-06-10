@@ -65,7 +65,7 @@ public class User{
         return usersVector;
     }
 
-   // get single place berdasarkan id
+   // get single user berdasarkan id
     public User getUser(Integer id){
         User user = new User();
         try {

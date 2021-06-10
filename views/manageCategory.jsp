@@ -30,9 +30,9 @@ tr:nth-child(even) {
 <body>
     <jsp:include page="../components/navbar.jsp" />
     <div class="container">
-            <%@include file="../models/Place.jsp"%>
+            <%@include file="../models/Category.jsp"%>
             <%
-                Vector<Place> places = new Place().getAllPlaces();
+                Vector<Category> categories = new Category().getAllCategory();
             %>
         <table style="margin-top: 1em;">
             <tr>
@@ -41,21 +41,21 @@ tr:nth-child(even) {
                 <th></th>
             </tr>
             <%
-                for(Place place : places){
+                for(Category category : categories){
             %>
                 <tr>
                     <td>
-                        <%= place.getPlacesId() %>
+                        <%= category.getCategoryId() %>
                     </td>
                     <td>
-                        <%= place.getName() %>
+                        <%= category.getName() %>
                     </td>
                     <td>
                         <button style="padding: 4px;">
-                            <a href="./editUser.jsp?userId=<%= place.getPlacesId() %>">Edit</a>
+                            <a href="./editUser.jsp?categoryId=<%= category.getCategoryId() %>">Edit</a>
                         </button>
-                        <form action="../controllers/place/deletePlace.jsp" method="POST">
-                            <input type="hidden" name="place_id" value="<%= place.getPlacesId() %>" />                    
+                        <form action="../controllers/category/deleteCategory.jsp" method="POST">
+                            <input type="hidden" name="category_id" value="<%= category.getCategoryId() %>" />                    
                             <input type="submit" value="Delete" name="Delete"/>   
                         </form>
                     </td>
@@ -66,7 +66,7 @@ tr:nth-child(even) {
         </table>
         <div class="card" style="padding: 2em; margin-top: 2em;">
             <h2 style="text-align:center;">Insert Category</h2>
-            <form action="../controllers/place.createPlace.jsp" method="POST" id="createPlace" style="flex-direction: column;">
+            <form action="../controllers/category.createCategory.jsp" method="POST" id="createCategory" style="flex-direction: column;">
                 <label for="name" style="display: block;">Name</label>
                 <input type="text" name="name" id="name" style="display: block; width: 100%; margin-top"/>
                 <input type="submit" value="Insert" style="display: block; width: 100%;"/>
