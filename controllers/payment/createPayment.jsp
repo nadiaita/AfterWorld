@@ -5,9 +5,9 @@
     Payment payment = new Payment();
     String payname = request.getParameter("payment_name");
 
-    //Validation -- NANTI AJA MAGER HEHE 
+    //Validation
 
-    //Set value ke place dan insert ke DB
+    //Set value ke payment dan insert ke DB
     try{
         payment.setName(payname.toLowerCase());
     } catch(Exception err=> {

@@ -1,4 +1,3 @@
-<!-- inser a new place -->
 <%@include file="../../models/User.jsp" %>
 <%@page import="java.sql.*, java.util.*" %>
 
@@ -10,7 +9,6 @@
     String upassword = request.getParameter("password");
     String uphone = request.getParameter("phone_number");
 
-    //Set value ke user dan insert ke DB
     try{
         user.setName(uname.toLowerCase());
         user.setRoleId(urole);

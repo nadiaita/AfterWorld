@@ -8,7 +8,7 @@
     
     //Validation
 
-    //Set value ke place dan insert ke DB
+    //Set value ke payment dan insert ke DB
     try{
         place.setName(payname.toLowerCase());
         response.sendRedirect("/");

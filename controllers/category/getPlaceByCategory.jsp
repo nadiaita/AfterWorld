@@ -1,4 +1,3 @@
-<!-- inser a new product -->
 <%@include file="../../models/Place.jsp" %>
 <%@page import="java.sql.*, java.util.*" %>
 
