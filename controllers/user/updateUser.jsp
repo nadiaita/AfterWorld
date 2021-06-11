@@ -10,9 +10,9 @@
     String upassword = request.getParameter("password");
     String uphone = request.getParameter("phone_number");
 
-    //Validation -- NANTI AJA MAGER HEHE 
+    //Validation
 
-    //Set value ke place dan insert ke DB
+    //Set value ke user dan insert ke DB
     try{
         user.setName(pname.toLowerCase());
         user.setRoleId(Integer.parseInt(urole));

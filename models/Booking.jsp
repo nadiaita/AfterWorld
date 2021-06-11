@@ -45,7 +45,7 @@ public class Booking{
     public java.sql.Date getStartDate(){return start_date;}
     public java.sql.Date getEndDate(){return end_date;}
 
-    // get places di database dengan pagination
+    // get booking di database dengan pagination
     public Vector<Booking> getAllBookingsByUserId(Integer user_id){
         Vector<Booking> bookingsVector = new Vector<Booking>();
         try{
@@ -61,7 +61,7 @@ public class Booking{
         return bookingsVector;
     }
 
-   // get single place berdasarkan id
+   // get single booking berdasarkan id
    public void createBooking(Integer user_id){
        try{ 
            String query = String.format("INSERT INTO booking (id, user_id, place_id, payment_id, start_date, end_date) VALUES (NULL, '"+user_id+"', '"+place_id+"', '"+payment_id+"', '"+start_date+"', '"+end_date+"');");

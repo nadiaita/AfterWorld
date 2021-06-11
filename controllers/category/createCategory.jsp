@@ -5,7 +5,7 @@
     Category category = new Category();
     String cname = request.getParameter("category_name");
 
-    //Validation -- NANTI AJA MAGER HEHE 
+    //Validation --
 
     //Set value ke place dan insert ke DB
     try{

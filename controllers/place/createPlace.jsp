@@ -1,4 +1,3 @@
-<!-- inser a new place -->
 <%@include file="../../models/Place.jsp" %>
 <%@page import="java.sql.*, java.util.*" %>
 
@@ -11,7 +10,7 @@
     String pdesc = request.getParameter("description");
     Integer prat = Integer.parseInt(request.getParameter("rating"));
 
-    //Validation -- NANTI AJA MAGER HEHE 
+    //Validation
 
     //Set value ke place dan insert ke DB
     try{
