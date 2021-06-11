@@ -15,14 +15,22 @@
 
     //Set value ke place dan insert ke DB
     try{
-        place.setName(pname.toLowerCase());
-        place.setCategoryId(1);
-        place.setPrice(pprice);
-        place.setDescription(pdesc);
-        place.setLocation(ploc);
-        place.setRating(prat);
-        place.insertPlace();
-        response.sendRedirect("../../views/managePlace.jsp");
+        if(pname.isEmpty() || ploc.isEmpty() || pdesc.isEmpty()){
+            response.sendRedirect("../../views/managePlace.jsp?status=danger&message=All Field must be Filled");
+            return;
+        } else if(pprice < 0 || prat < 0){
+            response.sendRedirect("../../views/managePlace.jsp?status=danger&message=Price or Category cannot be null");
+            return;
+        } else {
+            place.setName(pname.toLowerCase());
+            place.setCategoryId(1);
+            place.setPrice(pprice);
+            place.setDescription(pdesc);
+            place.setLocation(ploc);
+            place.setRating(prat);
+            place.insertPlace();
+            response.sendRedirect("../../views/managePlace.jsp?status=success&message=Place berhasil dimasukkan");
+        }
     } catch(Exception err)  {
         err.printStackTrace();
     }

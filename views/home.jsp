@@ -40,10 +40,10 @@
 </style>
 <body>
     <jsp:include page="../components/navbar.jsp" />
-     <section id="banner" style="text-align: center; padding: 3em 0;">
-        <div style="padding: 20px; background-color: white; width: 40%; margin: 0 auto;">
+     <section id="banner" style="text-align: center; padding: 3em 0; background-image: url('../background.webp'); height: 300px; display: flex;">
+        <div style="padding: 8px; background-color: white; width: 40%; margin: 0 auto; display: flex; flex-direction: column; justify-content: center;">
             <h1 style="font-size: 50px;">After World</h1>
-            <p style="font-size: 24px;">Life begins at the end of your comfort zone</p>
+            <p style="font-size: 24px; margin-top: 1em;">Life begins at the end of your comfort zone</p>
         </div>
     </section>
     <div class="container">
