@@ -35,8 +35,8 @@ tr:nth-child(even) {
                /* Tools tools = new Tools();
                 news [] list = tools.getEvent();
                 pageContext.setAttribute("list", list); */
-                Integer userId = Integer.parseInt(request.getParameter("userId"));
-                Place place = new Place().getPlace(userId);
+                Integer placeId = Integer.parseInt(request.getParameter("placeId"));
+                Place place = new Place().getPlace(placeId);
                 Vector<Integer> categoryIds = place.getAllCategoryId();
 
             %>

@@ -72,7 +72,7 @@ tr:nth-child(even) {
                     </td>
                     <td>
                         <button style="padding: 4px;">
-                            <a href="./editPlace.jsp?userId=<%= place.getPlacesId() %>">Edit</a>
+                            <a href="./editPlace.jsp?placeId=<%= place.getPlacesId() %>">Edit</a>
                         </button>
                         <form action="../controllers/place/deletePlace.jsp" method="POST">
                             <input type="hidden" name="place_id" value="<%= place.getPlacesId() %>" />                    

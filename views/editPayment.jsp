@@ -30,15 +30,18 @@ tr:nth-child(even) {
 <body>
     <jsp:include page="../components/navbar.jsp" />
     <div class="container">
-            <%@include file="../models/Place.jsp"%>
+            <%@include file="../models/Payment.jsp"%>
             <%
-                Vector<Place> places = new Place().getAllPlaces();
+                Integer paymentId = Integer.parseInt(request.getParameter("paymentId"));
+                Payment payment = new Payment().getPayment(paymentId);
+                Vector<Payment> payments = new Payment().getAllPayment();
             %>
         <div class="card" style="padding: 2em; margin-top: 2em;">
-            <form action="../controllers/place.createPlace.jsp" method="POST" id="createPlace" style="flex-direction: column;">
+            <form action="../controllers/payment.createPayment.jsp" method="POST" id="createPayment" style="flex-direction: column;">
+                <input type="hidden" value="<%= payment.getPaymentId() %>" name="payment_id" />
                 <label for="name" style="display: block;">Name</label>
-                <input type="text" name="name" id="name" style="display: block; width: 100%; margin-top"/>
-                <input type="submit" value="Insert" style="display: block; width: 100%;"/>
+                <input type="text" name="name" id="name" style="display: block; width: 100%; margin-top" value="<%= payment.getName() %>"/>
+                <input type="submit" value="Save" style="display: block; width: 100%;"/>
             </form>
         </div>
     </div>

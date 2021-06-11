@@ -68,6 +68,11 @@
                         <input type="hidden" name="user_id" value="1" />
                         <input type="hidden" name="place_id" value="<%= detailId %>" />
                         <input type="hidden" name="payment_id" value="1" />
+                        <option value="${payment.id}"
+                            <c:if test="${payment.id eq selectedPauId}">selected="selected"</c:if>
+                            >
+                            ${payment.name}
+                        </option>
                         <input type="date" name="start_date" id="start_date" style="margin-top: 1em"/>
                         <input type="date" name="end_date" id="end_date" style="margin-top: 1em"/>
                         <input type="submit" name="Book" value="Book" style="margin-top: 1em"/>
